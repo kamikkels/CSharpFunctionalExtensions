@@ -160,7 +160,7 @@ Console.WriteLine(noFruit.ToString()); // "No value"
 
 Use case: Procedurally accessing the inner value of the Maybe
 
-**Note**: Call this will throw a `InvalidOperationException` if there is no value
+**Note**: Calling this will throw a `InvalidOperationException` if there is no value
 
 ```csharp
 Maybe<string> apple = "apple";
@@ -168,6 +168,7 @@ Maybe<string> noFruit = Maybe<string>.None;
 
 Console.WriteLine(apple.GetValueOrThrow()); // "apple";
 Console.WriteLine(noFruit.GetValueOrThrow()); // throws InvalidOperationException !!
+Console.WriteLine(noFruit.GetValueOrThrow(new CustomException())); // throws CustomException !!
 ```
 
 #### HasValue and HasNoValue
@@ -547,21 +548,26 @@ Console.WriteLine(bananaInventory.MapError(ErrorEnhancer).ToString()); // "Faile
 
 ## Testing
 
-For extension methods on top of this library's `Result` and `Maybe` that you can use in tests,
-you can use [FluentAssertions](https://fluentassertions.com/)
-with [this NuGet package](https://www.nuget.org/packages/FluentAssertions.CSharpFunctionalExtensions/) ([GitHub link](https://github.com/pedromtcosta/FluentAssertions.CSharpFunctionalExtensions)).
+### CSharpFunctionalExtensions.FluentAssertions
 
-Example:
+A small set of extensions to make test assertions more fluent when using CSharpFunctionalExtensions! Check out the [repo for this library](https://github.com/NitroDevs/CSharpFunctionalExtensions.FluentAssertions) more information!
+
+Includes custom assertions for
+- Maybe
+- Result
+- Result<T>
+- Result<T, E>
+- UnitResult
+
+#### Example
 
 ```csharp
-// Arrange
-var myClass = new MyClass();
+var result = Result.Success(420);
 
-// Act
-Result result = myClass.TheMethod();
-
-// Assert
-result.Should().BeSuccess();
+result.Should().Succeed(); // passes
+result.Should().SucceedWith(420); // passes
+result.Should().SucceedWith(69); // throws
+result.Should().Fail(); // throws
 ```
 
 ## Read or Watch more about these ideas
@@ -574,11 +580,23 @@ result.Should().BeSuccess();
 ## Related Projects
 
 - [Typescript Functional Extensions](https://github.com/seangwright/typescript-functional-extensions)
+- [UniTask extensions for Unity](https://github.com/Razenpok/CSharpFunctionalExtensions.UniTask)
 
 ## Contributors
 
 A big thanks to the project contributors!
 
+- [Scheichsbeutel](https://github.com/Scheichsbeutel)
+- [Alexey Malinin](https://github.com/TechnoBerry)
+- [Robert Larkins](https://github.com/robertlarkins)
+- [tinytownsoftware](https://github.com/tinytownsoftware)
+- [piotr121993](https://github.com/piotr121993)
+- [Dmitry Korotin](https://github.com/teheran)
+- [michalsznajder](https://github.com/michalsznajder)
+- [Xavier](https://github.com/xavierjohn)
+- [Julien Aspirot](https://github.com/julienasp)
+- [Kyle McMaster](https://github.com/KyleMcMaster)
+- [Vinícius Beloni Cubas](https://github.com/vinibeloni)
 - [rutkowskit](https://github.com/rutkowskit)
 - [Giovanni Costagliola](https://github.com/MrBogomips)
 - [Mark Wainwright](https://github.com/wainwrightmark)

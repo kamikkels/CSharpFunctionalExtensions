@@ -1,6 +1,6 @@
-2.35.1
+2.40.2
 New features:
-* #454 Add TapErrorIf
+* #517 Proposal for a TapIf overload
 
 Fixed issues:
 * None

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net40;net45;net461;net472;netstandard2.0;net5.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>net40;net45;net461;netstandard2.0;net5.0;net6.0</TargetFrameworks>
     <PackageId>CSharpFunctionalExtensions</PackageId>
     <Authors>Vladimir Khorikov</Authors>
     <Description>CSharpFunctionalExtensions - functional extensions for C#</Description>
@@ -119,6 +119,24 @@
     </Compile>
     <Compile Update="Maybe\Extensions\Map.Task.cs">
       <DependentUpon>Map.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\MapIf.Task.cs">
+      <DependentUpon>MapIf.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\MapIf.Task.Right.cs">
+      <DependentUpon>MapIf.Task.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\MapIf.Task.Left.cs">
+      <DependentUpon>MapIf.Task.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\MapIf.ValueTask.Right.cs">
+      <DependentUpon>MapIf.ValueTask.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\MapIf.ValueTask.Left.cs">
+      <DependentUpon>MapIf.ValueTask.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\MapIf.ValueTask.cs">
+      <DependentUpon>MapIf.cs</DependentUpon>
     </Compile>
     <Compile Update="Maybe\Extensions\Or.Task.cs">
       <DependentUpon>Or.cs</DependentUpon>
@@ -258,6 +276,24 @@
     <Compile Update="Result\Methods\Extensions\TapIf.ValueTask.cs">
       <DependentUpon>TapIf.cs</DependentUpon>
     </Compile>
+    <Compile Update="Result\Methods\Extensions\TapTry.Task.cs">
+      <DependentUpon>TapTry.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\TapTry.Task.Left.cs">
+      <DependentUpon>TapTry.Task.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\TapTry.Task.Right.cs">
+      <DependentUpon>TapTry.Task.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\TapIfTry.Task.cs">
+      <DependentUpon>TapIfTry.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\TapIfTry.Task.Left.cs">
+      <DependentUpon>TapIfTry.Task.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\TapIfTry.Task.Right.cs">
+      <DependentUpon>TapIfTry.Task.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -356,6 +392,24 @@
     </Compile>
     <Compile Update="Result\Methods\Extensions\Ensure.ValueTask.cs">
       <DependentUpon>Ensure.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\EnsureNotNull.Task.Left.cs">
+      <DependentUpon>EnsureNotNull.Task.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\EnsureNotNull.Task.Right.cs">
+      <DependentUpon>EnsureNotNull.Task.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\EnsureNotNull.ValueTask.Left.cs">
+      <DependentUpon>EnsureNotNull.ValueTask.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\EnsureNotNull.ValueTask.Right.cs">
+      <DependentUpon>EnsureNotNull.ValueTask.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\EnsureNotNull.ValueTask.cs">
+      <DependentUpon>EnsureNotNull.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\EnsureNotNull.Task.cs">
+      <DependentUpon>EnsureNotNull.cs</DependentUpon>
     </Compile>
     <Compile Update="Result\Methods\Extensions\Finally.Task.Right.cs">
       <DependentUpon>Finally.Task.cs</DependentUpon>
@@ -593,6 +647,24 @@
     </Compile>
     <Compile Update="Result\Methods\Extensions\MapTry.ValueTask.Right.cs">
       <DependentUpon>MapTry.ValueTask.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\GetValueOrDefault.Task.cs">
+	  <DependentUpon>GetValueOrDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\GetValueOrDefault.Task.Right.cs">
+      <DependentUpon>GetValueOrDefault.Task.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\GetValueOrDefault.Task.Left.cs">
+      <DependentUpon>GetValueOrDefault.Task.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\GetValueOrDefault.ValueTask.Right.cs">
+      <DependentUpon>GetValueOrDefault.ValueTask.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\GetValueOrDefault.ValueTask.Left.cs">
+      <DependentUpon>GetValueOrDefault.ValueTask.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Result\Methods\Extensions\GetValueOrDefault.ValueTask.cs">
+      <DependentUpon>GetValueOrDefault.cs</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>
